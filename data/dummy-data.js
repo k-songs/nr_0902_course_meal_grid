@@ -2,16 +2,16 @@ import Category from '../models/category';
 import Meal from '../models/meal';
 
 export const CATEGORIES = [
-  new Category('c1', 'Italian', '#f5428d'),
-  new Category('c2', 'Quick & Easy', '#f54242'),
-  new Category('c3', 'Hamburgers', '#f5a442'),
-  new Category('c4', 'German', '#f5d142'),
-  new Category('c5', 'Light & Lovely', '#368dff'),
-  new Category('c6', 'Exotic', '#41d95d'),
-  new Category('c7', 'Breakfast', '#9eecff'),
-  new Category('c8', 'Asian', '#b9ffb0'),
-  new Category('c9', 'French', '#ffc7ff'),
-  new Category('c10', 'Summer', '#47fced')
+  new Category('c1', '11', '#f5428d'),
+  new Category('c2', '2 & Easy', '#f54242'),
+  new Category('c3', '3', '#f5a442'),
+  new Category('c4', '4', '#f5d142'),
+  new Category('c5', '5 ', '#368dff'),
+  new Category('c6', '6', '#41d95d'),
+  new Category('c7', '7', '#9eecff'),
+  new Category('c8', '8', '#b9ffb0'),
+  new Category('c9', '9', '#ffc7ff'),
+  new Category('c10', '10', '#47fced')
 ];
 
 export const MEALS = [
@@ -52,7 +52,8 @@ export const MEALS = [
     'Toast Hawaii',
     'affordable',
     'simple',
-    'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
+    /* 'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg', */
+    `https://upload.wikimedia.org/wikipedia/commons/1/1f/Hangul_Letters_MSLCK.svg?uselang=ko`,
     10,
     [
       '1 Slice White Bread',

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Platform,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 /* function MealItem({ title, imageUrl, duration, complexity, affordability }) {
   return (
@@ -29,24 +30,39 @@ import {
     </View>
   );
 } */
-  function MealItem({ title }) {
-    return (
-      <View style={styles.mealItem}>
-        <Pressable
-          android_ripple={{ color: "#ccc" }}
-       
-        >
-          <View style={styles.innerContainer}>
-            <View>
-       
-              <Text style={styles.title}>{title}</Text>
+function MealItem({
+  id,
+  title,
+  imageUrl,
+  duration,
+  complexity,
+  affordability,
+}) {
+  const navigation = useNavigation();
+  navigation.navigate("m_DetailScreen", {
+    mealId: id,
+  });
+  return (
+    <View style={styles.mealItem}>
+      <Pressable android_ripple={{ color: "#ccc" }}>
+        {/*         style= {({ pressed }) => pressed && styles.buttonPressed} */}
+        <View style={styles.innerContainer}>
+          <View>
+            <Image source={{ uri: imageUrl }} style={styles.image} />
+            <Text style={styles.title}>{title}</Text>
+            <View style={styles.details}>
+              <Text style={styles.detailItem}>{duration}m</Text>
+              <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
+              <Text style={styles.detailItem}>
+                {affordability.toUpperCase()}
+              </Text>
             </View>
-    
           </View>
-        </Pressable>
-      </View>
-    );
-  }
+        </View>
+      </Pressable>
+    </View>
+  );
+}
 export default MealItem;
 
 const styles = StyleSheet.create({
@@ -61,9 +77,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
   },
-  buttonPressed: {
+  /*   buttonPressed: {
     opacity: 0.5,
-  },
+  }, */
   innerContainer: {
     borderRadius: 8,
     overflow: "hidden",
